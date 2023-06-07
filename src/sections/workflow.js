@@ -1,10 +1,11 @@
+/** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Container, Grid, Box, Heading, Text } from 'theme-ui';
-import SectionHeader from '../components/section-header';
+import SectionHeader from 'components/section-header';
 
-import PatternBG from '../assets/patternBG.png';
-import ArrowOdd from '../assets/arrowOdd.svg';
-import ArrowEven from '../assets/arrowEven.svg';
+import PatternBG from 'assets/patternBG.png';
+import ArrowOdd from 'assets/arrowOdd.svg';
+import ArrowEven from 'assets/arrowEven.svg';
 
 const data = [
   {
@@ -35,8 +36,28 @@ const data = [
 
 export default function WorkFlow() {
   return (
-    <h1>WorkFlow</h1>
-  )
+    <section sx={styles.workflow}>
+      <Container>
+        <SectionHeader
+          slogan="Whats the function"
+          title="Let’s see how it works"
+          isWhite={true}
+        />
+
+        <Grid sx={styles.grid}>
+          {data.map((item) => (
+            <Box sx={styles.card} key={item.id}>
+              <Box sx={styles.iconBox}>{`0${item.id}`}</Box>
+              <Box sx={styles.wrapper}>
+                <Heading sx={styles.wrapper.title}>{item.title}</Heading>
+                <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+              </Box>
+            </Box>
+          ))}
+        </Grid>
+      </Container>
+    </section>
+  );
 }
 
 const styles = {
@@ -48,6 +69,7 @@ const styles = {
     backgroundSize: 'cover',
     position: 'relative',
     py: [8, null, 9, null, null, 10],
+    marginTop: '6rem',
   },
   grid: {
     mb: -1,
