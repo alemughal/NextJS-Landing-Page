@@ -65,7 +65,7 @@ export default function Package() {
 
   return (
     <section id="pricing" sx={{ variant: "section.pricing" }}>
-      <Container>
+      <Container sx={{marginTop: '6rem'}}>
         <SectionHeader
           slogan="Pricing Plan"
           title="Choose your pricing policy"
