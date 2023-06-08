@@ -179,7 +179,7 @@ const data = [
 export default function TeamSection() {
   return (
     <section>
-      <Container sx={{marginTop: '6rem'}}>
+      <Container css={{marginTop: '6rem'}}>
         <SectionHeader
           slogan="Our Team"
           title="The most qualified talented individuals"
